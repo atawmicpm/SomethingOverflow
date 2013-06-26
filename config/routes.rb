@@ -3,7 +3,9 @@ SomethingOverflow::Application.routes.draw do
 
   resources :users
 
-  root :to => 'users#new'
+  resources :questions, :except => [:edit, :update, :destroy]
+
+  root :to => 'questions#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
