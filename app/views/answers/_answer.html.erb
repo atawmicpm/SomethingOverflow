@@ -1,1 +1,10 @@
-<li><%= answer.url %> - <%= answer.content %></li>
+<div class="answer">
+  <%= image_tag answer.url, height: '200', width: '200', :class => "answer-image" %>
+  <div class="product-details">
+    <p><b>Name:</b> Burton Custom X</p>
+    <p><b>Price:</b> $500</p>
+    <div><b>Comment:</b></div>
+    <p class="answer-content"><%= answer.content %></p>
+  </div>
+  <div class="float-clear"></div>
+</div>

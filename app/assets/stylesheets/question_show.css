@@ -1,0 +1,63 @@
+#question-show-page-title {
+  font-size: 25px;
+  padding-top: 3px;
+}
+
+#question-description-box {
+  box-sizing: border-box;
+  margin: 25px 15px 0 15px;
+}
+
+#question-details-box {
+  padding-top: 15px;
+  margin-right: 15px;
+}
+
+#create-new-answer {
+  box-sizing: border-box;
+  margin-top: 50px;
+  padding: 0 15px;
+}
+
+#your-answer {
+  font-size: 18px;
+}
+
+#form-comment {
+  margin-top: 5px;
+  width: 100%;
+  height: 100px;
+}
+
+#form-url {
+  width: 300px;
+}
+
+
+
+
+#answers-box-header {
+  padding-top: 40px;
+  border-bottom: 1px solid gray;
+}
+
+#num-of-answers {
+  font-size: 20px;
+}
+
+.answer {
+  margin: 20px;
+  padding: 20px;
+  background-color: #eee;
+}
+
+.answer-image {
+  float: left;
+  border: 2px solid darkgrey;
+  background-color: white;
+  margin-right: 20px;
+}
+
+.product-details p {
+  margin-bottom: 15px;
+}
