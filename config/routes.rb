@@ -5,6 +5,8 @@ SomethingOverflow::Application.routes.draw do
 
   resources :questions, :except => [:edit, :update, :destroy]
 
+  resources :answers, :only => [:create]
+
   root :to => 'questions#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,16 @@
+1. Answers
+   - add routes (create, edit, update, destroy) -- done
+   - flesh out controller -- done
+
+2. Tests
+   - questions
+   - answers
+   - integration (if we have time)
+
+3. Styling
+
+4. Questions
+   - update show page to include answer form -- done
+
+5. Homepage
+   - include button to create new question
