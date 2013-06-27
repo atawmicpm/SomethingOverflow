@@ -1,0 +1,54 @@
+#index-page-title {
+  font-size: 21px;
+  padding-top: 15px;
+}
+
+.question-box {
+  clear: both;
+  box-sizing: border-box;
+  padding: 20px 15px;
+  border-bottom: 1px solid gray;
+}
+
+.answers-box {
+  float: left;
+  width: 60px;
+  height: 40px;
+}
+
+.num-answers {
+  font-size: 25px;
+  text-align: center;
+  color: gray;
+}
+
+.word-answers {
+  font-size: 13px;
+  text-align: center;
+  color: gray;
+}
+
+.question-details-box {
+  margin-left: 80px;
+}
+
+.question-title-box {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.question-user {
+  float: right;
+  font-size: 13px;
+}
+
+.timestamp {
+  float: right;
+  font-size: 13px;
+  color: gray;
+  margin-right: 5px;
+}
+
+.float-clear {
+  clear: both;
+}

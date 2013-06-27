@@ -1,3 +1,22 @@
-<% @questions.each do |question| %>
-  <p><%= link_to question.title, question %></p>
-<% end %>
+  <p id="index-page-title">All Questions</p>
+</div>
+<div id="all-questions">
+  <% @questions.each do |question| %>
+    <div class="question-box">
+      <div class="answers-box">
+        <p class="num-answers"><%= question.answers.length %></p>
+        <p class="word-answers"><%= question.answers.length == 1 ? "answer" : "answers" %></p>
+      </div>
+      <div class="question-details-box">
+        <div class="question-title-box">
+          <%= link_to question.title, question_path(question) %>
+        </div>
+        <div class="question-user-box">
+          <%= link_to question.user.name, user_path(question.user.id), :class => "question-user" %>
+          <p class="timestamp">1m ago</p>
+        </div>
+      </div>
+      <div class="float-clear"></div>
+    </div>
+  <% end %>
+</div>
