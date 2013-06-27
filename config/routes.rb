@@ -1,7 +1,7 @@
 SomethingOverflow::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
 
-  resources :users
+  resources :users, :except => :index
 
   resources :questions, :except => [:edit, :update, :destroy]
 

@@ -11,6 +11,7 @@ var Answer = {
   },
 
   appendErrors: function(e, xhr, status, error) {
+    $('.messages').html('');
     $('.messages').append(xhr.responseText);
   }
 }
