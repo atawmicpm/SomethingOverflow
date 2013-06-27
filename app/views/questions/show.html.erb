@@ -1,3 +1,4 @@
+<!-- REVIEW: too much going on, move code to partials -->
   <p id="question-show-page-title"><%= @question.title %></p>
 </div>
 
@@ -29,9 +30,12 @@
 
 <div id="answers-box">
   <div id="answers-box-header">
+    <!-- REVIEW: move this to a helper so you minimize logic in the view and also DRY -->
     <p id="num-of-answers"><%= @question.answers.length %> <%= @question.answers.length == 1 ? "Answer" : "Answers" %></p>
   </div>
   <% @question.answers.each do |answer| %>
+    <!-- REVIEW: it's preferred that you don't user the partial/local syntax, this could be rewritten:
+    render 'answers/answer', :answer => answer -->
     <%= render :partial => 'answers/answer', :locals => { :answer => answer } %>
   <% end %>
 </div>

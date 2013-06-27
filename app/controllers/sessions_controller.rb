@@ -1,3 +1,4 @@
+# REVIEW: nice and clean.
 class SessionsController < ApplicationController
   def new
   end
@@ -13,7 +14,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destroy 
+  def destroy
     session.clear
     redirect_to root_path
   end

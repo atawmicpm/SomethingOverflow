@@ -1,3 +1,6 @@
+<!-- REVIEW: you can probably generalize this partial and share it with other views.
+what if do render 'form_errors', :object => anyobject
+then here we would just do object.errors... -->
 <% answer.errors.full_messages.each do |error| %>
   <p><%= error %></p>
 <% end %>

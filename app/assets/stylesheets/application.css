@@ -12,6 +12,9 @@
  *= require_tree .
  */
 
+
+/* REVIEW: you shouldn't be adding any code in this file */
+
 body {
   margin: 0;
   font-family: sans-serif;

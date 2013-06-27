@@ -1,3 +1,4 @@
+# REVIEW: minimize the pending tests.
 require 'spec_helper'
 
 describe UsersController do

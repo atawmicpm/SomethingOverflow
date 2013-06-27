@@ -3,7 +3,8 @@ require 'spec_helper'
 describe User do
 
   let(:user) { FactoryGirl.build(:user) }
-  
+
+  # REVIEW: you are overtesting your validations, either use should matchers or do it manually.
   subject { user }
     it { should validate_presence_of :name}
     it { should validate_presence_of :email}
@@ -14,7 +15,7 @@ describe User do
     expect(FactoryGirl.build(:user, name: nil)).to_not be_valid
   end
 
-  it "is invalid without an email" do 
+  it "is invalid without an email" do
     expect(FactoryGirl.build(:user, email: nil)).to_not be_valid
   end
 

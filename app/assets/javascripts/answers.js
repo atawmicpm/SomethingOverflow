@@ -1,3 +1,4 @@
+// REVIEW: super clean, nice!
 var Answer = {
   init: function() {
     $('#new_answer').on('ajax:success', this.appendAnswer);
@@ -6,6 +7,7 @@ var Answer = {
 
   appendAnswer: function(e, data) {
     $('.answers').append(data);
+    // REVIEW: I would move this to it's own method, to calrify what you're doing.
     $('.answer_input').val('');
     $('.messages').html('');
   },

@@ -5,6 +5,7 @@
     <div class="question-box">
       <div class="answers-box">
         <p class="num-answers"><%= question.answers.length %></p>
+        <!-- REVIEW: move this logic into a view helper, also rails has a helper that pluralizes -->
         <p class="word-answers"><%= question.answers.length == 1 ? "answer" : "answers" %></p>
       </div>
       <div class="question-details-box">
