@@ -1,0 +1,89 @@
+body {
+	margin: 0 auto;
+	font-family: sans-serif;
+	
+	ul {
+		padding-left: 250px
+	}
+	
+	a {
+		text-decoration: none;
+		color: #0077cc;
+		&:visited {
+			color: #4a6b82;
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	
+	p {
+		margin: 0;
+	}
+
+	header {
+		background-color: #eee;
+		height: 30px;
+	}
+}
+
+#nav-links {
+	width: 1000px;
+	margin: 0 auto;
+	padding-top: 7px;
+	a {
+		font-size: 13px;
+		&:visited {
+			color: #0077cc;
+		}
+	}
+}
+
+#home-button {
+	float: left;
+	font-size: 35px;
+	color: black;
+	margin-bottom: 20px;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+#ask-button {
+	box-sizing: border-box;
+	float: right;
+	height: 30px;
+	padding: 4px 15px 0 15px;
+	background-color: gray;
+	color: white;
+	font-size: 18px;
+	margin: 5px 5px 0 0;
+	&:hover {
+		background-color: orange;
+		text-decoration: none;
+	}
+}
+
+.nav-button {
+	float: right;
+	margin-left: 20px;
+}
+
+#container {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#logo-ask-box {
+	margin-top: 30px;
+	height: auto;
+}
+
+#page-title-box {
+	border-bottom: 1px solid gray;
+	height: 40px;
+}
+
+#yield {
+	clear: both;
+}
