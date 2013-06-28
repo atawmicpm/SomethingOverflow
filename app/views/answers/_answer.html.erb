@@ -1,10 +1,30 @@
 <div class="answer">
   <%= image_tag answer.url, height: '200', width: '200', :class => "answer-image" %>
+
+  <%= link_to 'Up', votes_up_path(:votable_type => answer.class, 
+  :votable_id => answer.id), :remote => true, :method => :post, :class => 'up' %>
+
+  <%= link_to 'Down', votes_down_path(:votable_type => answer.class, 
+  :votable_id => answer.id), :remote => true, :method => :post, :class => 'down' %>
+
+  Votes: <span id="votecount-<%= answer.id %>"><b><%= answer.current_vote_count %></b></span>
   <div class="product-details">
     <p><b>Name:</b> Burton Custom X</p>
     <p><b>Price:</b> $500</p>
-    <div><b>Comment:</b></div>
+    <div><b>Description:</b></div>
     <p class="answer-content"><%= answer.content %></p>
+
+  <%= form_tag(controller: "comments", action: "create", method: "post") do %>
+    <%= text_field_tag :content %>
+    <%= hidden_field_tag 'answer_id', answer.id %>
+    <%= submit_tag "Add Comment" %>
+  <% end %>
+  <div><b>Comments:</b></div>
+  <ul>
+  <% answer.comments.each do |comment| %>
+    <li><%= comment.content %></li>
+  <% end %>
+  </ul>
   </div>
   <div class="float-clear"></div>
 </div>

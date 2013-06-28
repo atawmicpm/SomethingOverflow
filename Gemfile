@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'faker'
 
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
