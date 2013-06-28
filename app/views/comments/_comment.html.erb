@@ -1,6 +1,6 @@
 <div class="comment">
   <div class="vote_arrows">
-    <%= render partial: 'votes/vote', :locals => { :voteable => comments } %>
+    <%= render 'votes/vote', :voteable => comments %>
   </div>
   <div class="comment_box">
     <p><%= comments.text %></p>
