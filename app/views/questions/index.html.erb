@@ -5,7 +5,7 @@
     <div class="question-box">
       <div class="answers-box">
         <p class="num-answers"><%= question.answers.length %></p>
-        <p class="word-answers"><%= question.answers.length == 1 ? "answer" : "answers" %></p>
+        <%= render 'answers/answer_count_home', :question => question %>
       </div>
       <div class="question-details-box">
         <div class="question-title-box">

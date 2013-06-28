@@ -1,0 +1,10 @@
+<div id="answers-container">
+  <div id="answers-box-header">
+    <%= render 'answers/answer_count', :question => question %>
+  </div>
+  <div id="answers-box">
+    <% question.answers.each do |answer| %>
+      <%= render 'answers/answer', :answer => answer %>
+    <% end %>
+  </div>
+</div>

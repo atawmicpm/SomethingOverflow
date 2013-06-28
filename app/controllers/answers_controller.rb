@@ -1,5 +1,4 @@
 class AnswersController < ApplicationController
-  
   def create
     @answer = Answer.new(params[:answer])
     if @answer.save

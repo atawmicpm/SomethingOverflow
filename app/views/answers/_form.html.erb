@@ -1,0 +1,7 @@
+<%=  form_for(@answer, remote: true) do |f| %>
+  <%=  f.text_area :content, :placeholder => "Comment", :class => "answer-input", :id => "form-comment" %>
+  <%=  f.text_field :url, :placeholder => "Link", :class => "answer-input", :id => "form-url" %>
+  <%=  f.hidden_field :question_id, :value => question.id %>
+  <%=  f.hidden_field :user_id, :value => current_user.id %>
+  <%=  f.submit "Post Answer" %>
+<% end %>

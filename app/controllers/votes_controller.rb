@@ -1,5 +1,4 @@
 class VotesController < ApplicationController
-  
   def create
     p params
     vote = Vote.create(params[:vote])
@@ -12,5 +11,4 @@ class VotesController < ApplicationController
     vote.update_attributes(params[:vote])
     render :json => {}
   end
-
 end

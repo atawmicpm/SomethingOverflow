@@ -1,4 +1,8 @@
 class QuestionsController < ApplicationController
+  def index
+    # SHADI REVIEW: isntead of using reverse, just set a default order in your question model.
+    @questions = Question.all
+  end
 
   def new
     if current_user
@@ -25,9 +29,5 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answer = Answer.new
-  end
-
-  def index
-    @questions = Question.all.reverse
   end
 end

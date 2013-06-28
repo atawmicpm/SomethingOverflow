@@ -5,14 +5,22 @@ var Answer = {
   },
 
   appendAnswer: function(e, data) {
-    $('.answers').append(data);
-    $('.answer_input').val('');
-    $('.messages').html('');
+    $('#answers-box').prepend(data);
+    Answer.clearInput();
+    Answer.clearMessages();
   },
 
   appendErrors: function(e, xhr, status, error) {
-    $('.messages').html('');
+    Answer.clearMessages();
     $('.messages').append(xhr.responseText);
+  },
+
+  clearInput: function() {
+    $('.answer-input').val('');
+  },
+
+  clearMessages: function() {
+    $('.messages').html('');
   }
 }
 

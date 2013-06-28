@@ -1,7 +1,7 @@
+<!-- Too much going on! Move stuff to partials -->
+
 <div class="answer">
   <%= image_tag answer.url, height: '200', width: '200', :class => "answer-image" %>
-
-  <%= render partial: 'votes/vote', :locals => { voteable: answer } %>
 
   <div class="product-details">
     <p><b>Name:</b> Burton Custom X</p>
@@ -9,17 +9,26 @@
     <div><b>Description:</b></div>
     <p class="answer-content"><%= answer.content %></p>
 
-  <%= form_tag(controller: "comments", action: "create", method: "post") do %>
-    <%= text_field_tag :content %>
-    <%= hidden_field_tag 'answer_id', answer.id %>
-    <%= submit_tag "Add Comment" %>
+  <% if current_user %>
+
+    <%= render 'votes/vote', voteable: answer %>
+
+    <%= form_tag(controller: "comments", action: "create", method: "post") do %>
+      <%= text_field_tag :content %>
+      <%= hidden_field_tag 'answer_id', answer.id %>
+      <%= submit_tag "Add Comment" %>
+    <% end %>
+
   <% end %>
+
   <div><b>Comments:</b></div>
-  <ul>
-  <% answer.comments.each do |comment| %>
-    <li><%= comment.content %></li>
-  <% end %>
-  </ul>
+    <ul>
+      <% answer.comments.each do |comment| %>
+        <li><%= comment.content %></li>
+      <% end %>
+    </ul>
   </div>
+  
   <div class="float-clear"></div>
+
 </div>

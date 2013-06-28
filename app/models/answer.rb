@@ -4,8 +4,12 @@ class Answer < ActiveRecord::Base
   has_many :comments
   has_many :votes, as: :voteable
 
+  # SHADI REVIEW: don't user question_id or *_id, try to use the name of the association.
+  # so this line would be attr_accessible :url, :content, :question, :user
+  # now when you mass assign: Answer.new :user => current_user, :question => @question.
   attr_accessible :url, :content, :question_id, :user_id
 
-  validates_presence_of :url
+  validates :url, presence: true
 
+  default_scope order('created_at DESC')
 end

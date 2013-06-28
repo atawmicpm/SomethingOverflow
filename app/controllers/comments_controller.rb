@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def create
     comment = Comment.create(content: params[:content])
     current_user.comments << comment
