@@ -1,11 +1,7 @@
 <div class="answer">
   <%= image_tag answer.url, height: '200', width: '200', :class => "answer-image" %>
 
-  <%= link_to 'Up', votes_up_path(:votable_type => answer.class, 
-  :votable_id => answer.id), :remote => true, :method => :post, :class => 'up' %>
-
-  <%= link_to 'Down', votes_down_path(:votable_type => answer.class, 
-  :votable_id => answer.id), :remote => true, :method => :post, :class => 'down' %>
+  <%= render partial: 'votes/vote', :locals => { voteable: answer } %>
 
   Votes: <span id="votecount-<%= answer.id %>"><b><%= answer.current_vote_count %></b></span>
   <div class="product-details">

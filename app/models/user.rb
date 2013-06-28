@@ -9,4 +9,19 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name, :email, :password
   validates_uniqueness_of :email
+
+
+  def find_vote(voteable)
+    self.votes.find_by_voteable_id_and_voteable_type(voteable.id, voteable.class.name)
+  end
+
+  def vote_value(voteable)
+    vote = find_vote(voteable)
+    vote ? vote.value : 0
+  end
+
+  def vote_id(voteable)
+    vote = find_vote(voteable)
+    vote ? vote.id : 0
+  end
 end
