@@ -7,6 +7,11 @@ SomethingOverflow::Application.routes.draw do
 
   resources :answers, :only => [:create]
 
+  resources :comments
+
+  post '/votes/up' => 'votes#up'
+  post '/votes/down' => 'votes#down' 
+
   root :to => 'questions#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

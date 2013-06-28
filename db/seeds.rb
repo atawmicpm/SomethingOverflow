@@ -2,7 +2,7 @@ User.create(name: "Foo Bar", email: "foo@bar.com", password: "password")
 User.create(name: "Bar Foo", email: "bar@foo.com", password: "password")
 User.create(name: "Foo Baz", email: "foo@baz.com", password: "password")
 
-Question.create(title: "Best smartphone on the market today",
+Question.create(title: "Recommend how I make sure my MVP is done before I hand off my project?",
                 content: Faker::Lorem.paragraph)
 Question.create(title: "If you could recommend one personal product/accessory, what would it be?",
                 content: Faker::Lorem.paragraph)
