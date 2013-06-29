@@ -7,7 +7,11 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'faker'
+
 gem 'mechanize'
+gem "selenium-webdriver"
+gem 'database_cleaner'
+gem 'capybara-webkit'
 
 group :development, :test do
   gem 'rspec-rails'

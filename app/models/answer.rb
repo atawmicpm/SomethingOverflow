@@ -27,9 +27,5 @@ class Answer < ActiveRecord::Base
     agent.get(self.url)
     self.picture_url = agent.page.search("#main-image").first.attributes['src'].value
     self.product_name = agent.page.search("h1").children[-2].text()
-    # self.price =  
-    # self.brand =
   end
-
 end
-

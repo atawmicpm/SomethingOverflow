@@ -3,14 +3,11 @@
 
 <div class="answer" <% if answer.best? %>id="best-answer"<% end %>>
   
-  <%= image_tag answer.url, height: '200', width: '200', :class => "answer-image" %>
+  <%= image_tag answer.picture_url, height: '200', width: '200', :class => "answer-image" %>
 
   <div class="product-details">
-    <p><b>Brand:</b> Burton Custom X</p>
-    <p><b>Product Name:</b> Burton Custom X</p>
+    <p><b>Product Name:</b><%= answer.product_name %></p>
 
-    <p><b>Price:</b> $500</p>
-    <div><b>Description:</b></div>
     <p class="answer-content"><%= answer.content %></p>
 
 
