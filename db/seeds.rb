@@ -28,15 +28,15 @@ Question.all.each do |question|
   user.questions << question
 end
 
-Answer.create(url: "http://www.abc-of-snowboarding.com/images/content-images/article-unitysnowboards-1.gif", content: Faker::Lorem.paragraph)
-Answer.create(url: "http://images.ccs.com/pi/65-05324/large/lib-tech-burtner-box-scratcher-btx-snowboard-mens", content: Faker::Lorem.paragraph)
-Answer.create(url: "http://di1.shopping.com/images/pi/d0/de/db/31046502-200x200-0-0.jpg?p=p7.95a38750b00b7d0cd950&a=2&c=1&l=8055916&t=100108133712&r=1", content: Faker::Lorem.paragraph)
-Answer.create(url: "http://images.ccs.com/pi/65-12117/large/burton-process-snowboard-custom-binding-pkg-mens", content: Faker::Lorem.paragraph)
-Answer.create(url: "http://www.snowshedny.com/ProductImages/112524/c_6117249_burton-lux-snowboard-women-s-2013-139-front.jpg", content: Faker::Lorem.paragraph)
+Answer.create(url: "http://www.amazon.com/Paricon-SB1-110T-Sceptor-Snowboard/dp/B000JJZLQU/ref=sr_1_1?s=sporting-goods&ie=UTF8&qid=1372478903&sr=1-1&keywords=snowboard", content: Faker::Lorem.paragraph)
+Answer.create(url: "http://www.amazon.com/Burton-1018856-Womens-Feather-Snowboard/dp/B005I70Z1O/ref=sr_1_4?s=sporting-goods&ie=UTF8&qid=1372478963&sr=1-4&keywords=snowboard", content: Faker::Lorem.paragraph)
+Answer.create(url: "http://www.amazon.com/Burton-Clash-Snowboard/dp/B006VZW91Q/ref=sr_1_3?s=sporting-goods&ie=UTF8&qid=1372478980&sr=1-3&keywords=snowboard", content: Faker::Lorem.paragraph)
+Answer.create(url: "http://www.amazon.com/Burton-Chopper-Snowboard-Orange-topskin/dp/B00597UDZQ/ref=sr_1_14?s=sporting-goods&ie=UTF8&qid=1372478980&sr=1-14&keywords=snowboard", content: Faker::Lorem.paragraph)
+Answer.create(url: "http://www.amazon.com/Process-Flying-Snowboard-Mens-Burton/dp/B005I726QG/ref=sr_1_2?s=sporting-goods&ie=UTF8&qid=1372478980&sr=1-2&keywords=snowboard", content: Faker::Lorem.paragraph)
 
 Answer.all.each do |answer|
   user = User.find(rand(1..3))
-  question = Question.last
+  question = Question.first
   user.answers << answer
   question.answers << answer
 end

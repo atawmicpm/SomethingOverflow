@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(:version => 20130628235852) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.string   "product_name"
-    t.string   "brand"
-    t.string   "price"
     t.string   "picture_url"
   end
 
