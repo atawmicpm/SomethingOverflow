@@ -26,6 +26,7 @@ class Answer < ActiveRecord::Base
     agent = Mechanize.new
     agent.get(self.url)
     self.picture_url = agent.page.search("#main-image").first.attributes['src'].value
-    self.product_name = agent.page.search("h1").children[-2].text()
+    mech_objs = agent.page.search("h1").children
+    self.product_name = mech_objs.length > 1 ? mech_objs[-2].text() : mech_objs.text()
   end
 end
