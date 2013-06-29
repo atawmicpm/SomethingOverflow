@@ -1,0 +1,17 @@
+.comments {
+  width: 87%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: lightgray;
+  display: none;
+}
+
+.comment-form form #content {
+  width: 75%;
+}
+
+.comment {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid gray;
+}

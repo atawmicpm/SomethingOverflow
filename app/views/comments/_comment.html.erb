@@ -1,9 +1,13 @@
-<div class="comment">
-  <div class="vote_arrows">
-    <%= render 'votes/vote', :voteable => comments %>
+<% if current_user %>
+  <%= render 'comments/form', answer: answer  %>
+<% end %>
+  
+<% answer.comments.each do |comment| %>
+  <div class="comment">
+    <% if current_user %>
+      <%= render 'votes/vote', voteable: comment %>
+    <% end %>
+  
+    <div class="comment-text"><%= comment.content %></div>
   </div>
-  <div class="comment_box">
-    <p><%= comments.text %></p>
-    <p>By: <%= comments.user.email %></p>
-  </div>
-</div>
+<% end %>

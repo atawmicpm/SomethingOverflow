@@ -43,9 +43,13 @@
 }
 
 .answer {
-  margin: 20px;
+  margin: 20px 20px 0 20px;
   padding: 20px;
   background-color: #eee;
+}
+
+.best_answer {
+  float: right;
 }
 
 .answer-image {
@@ -57,9 +61,5 @@
 
 .product-details p {
   margin-bottom: 15px;
-}
-
-.best_answer {
-  float: right;
 }
 

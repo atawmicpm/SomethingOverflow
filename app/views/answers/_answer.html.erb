@@ -1,41 +1,29 @@
 <!-- Too much going on! Move stuff to partials -->
-  <!-- show best answer icon if this is the best answer -->
+<!-- show best answer icon if this is the best answer -->
 
 <div class="answer" <% if answer.best? %>id="best-answer"<% end %>>
-  
   <%= image_tag answer.picture_url, height: '200', width: '200', :class => "answer-image" %>
 
   <div class="product-details">
-    <p><b>Product Name:</b><%= answer.product_name %></p>
+    <p><b>Product Name:</b> <%= answer.product_name %></p>
 
     <p class="answer-content"><%= answer.content %></p>
 
+    <% if current_user %>
+      <%= render 'votes/vote', voteable: answer %>
 
-
-  <!-- allow question owner to choose a different best answer -->
-
-  <% if current_user %>
-
-    <%= render 'votes/vote', voteable: answer %>
-    <%= render 'comments/form', answer: answer  %>
-
-
-
-    <% if answer.question.owner?(current_user) %>
-      <%= render 'answers/choose_best', answer: answer %>
-    <% end %>
-
-
-  <% end %>
-
-  <div><b>Comments:</b></div>
-    <ul>
-      <% answer.comments.each do |comment| %>
-        <li><%= comment.content %></li>
+      <% if answer.question.owner?(current_user) %>
+        <%= render 'answers/choose_best', answer: answer %>
       <% end %>
-    </ul>
+    <% end %>
+    
+    <div class="num-comments"><%= answer.comments.length %> comments</div>
+    <%= link_to "Add/View Comments", question_path(answer.question), :class => "comment-toggle" %>
   </div>
-  
-  <div class="float-clear"></div>
 
+  <div class="float-clear"></div>
+</div>
+
+<div class="comments">
+  <%= render 'comments/comment', answer: answer  %>
 </div>

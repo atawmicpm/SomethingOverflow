@@ -1,5 +1,7 @@
-<%= form_tag(controller: "comments", action: "create", method: "post") do %>
-  <%= text_field_tag :content %>
-  <%= hidden_field_tag 'answer_id', answer.id %>
-  <%= submit_tag "Add Comment" %>
-<% end %>
+<div class="comment-form">
+  <%= form_tag(controller: "comments", action: "create", method: "post") do %>
+    <%= text_field_tag :content %>
+    <%= hidden_field_tag 'answer_id', answer.id %>
+    <%= submit_tag "Add Comment" %>
+  <% end %>
+</div>
