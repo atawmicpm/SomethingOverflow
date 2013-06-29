@@ -12,7 +12,7 @@ var Answer = {
 
   appendErrors: function(e, xhr, status, error) {
     Answer.clearMessages();
-    $('.messages').append(xhr.responseText);
+    $('#errors').append(xhr.responseText);
   },
 
   clearInput: function() {
@@ -20,7 +20,7 @@ var Answer = {
   },
 
   clearMessages: function() {
-    $('.messages').html('');
+    $('#errors').html('');
   }
 }
 
