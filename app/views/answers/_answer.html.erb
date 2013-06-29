@@ -8,6 +8,8 @@
     <p><b>Product Name:</b> <%= answer.product_name %></p>
 
     <p class="answer-content"><%= answer.content %></p>
+    
+    <%= render 'votes/num_votes', voteable: answer %>
 
     <% if current_user %>
       <%= render 'votes/vote', voteable: answer %>
