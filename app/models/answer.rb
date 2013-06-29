@@ -3,6 +3,7 @@ class Answer < ActiveRecord::Base
   belongs_to :user
   has_many :comments
   has_many :votes, as: :voteable
+  before_save :answer_scraper
 
   # SHADI REVIEW: don't user question_id or *_id, try to use the name of the association.
   # so this line would be attr_accessible :url, :content, :question, :user
@@ -16,4 +17,15 @@ class Answer < ActiveRecord::Base
   def vote_count 
     self.votes.inject(0) { |result, vote| result + vote.value}
   end
+
+  def answer_scraper
+    agent = Mechanize.new
+    agent.get(self.url)
+    self.picture_url = agent.page.search("#main-image").first.attributes['src'].value
+    self.product_name = agent.page.search("h1").children[-2].text()
+    # self.price =  
+    # self.brand =
+  end
 end
+
+

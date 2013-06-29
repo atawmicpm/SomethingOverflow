@@ -11,15 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130627181552) do
+ActiveRecord::Schema.define(:version => 20130628235852) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
     t.integer  "user_id"
     t.string   "url"
     t.text     "content"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "product_name"
+    t.string   "brand"
+    t.string   "price"
+    t.string   "picture_url"
   end
 
   add_index "answers", ["url", "question_id"], :name => "index_answers_on_url_and_question_id", :unique => true

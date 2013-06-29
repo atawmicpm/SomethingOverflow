@@ -1,13 +1,21 @@
-1. Tests
-   - questions
-   - answers
-   - integration (if we have time)
-2. Finish Styling
-3. Implement voting count
-4. Scrape for data
-   - Amazon / validation
-5. Implement comment voting - ajax(maybe)
-6. We could add some jquery fanciness 
+Essential now:
+1. Comment voting (A/Ph)
+2. Voting counts + ordering by most votes (A/Ph)
+3. Scraping Amazon (S/Pa)
+4. User can choose best answer
+
+Finish by Monday:
+5. Finish styling
+6. Add jquery fanciness
 
 
+Weekend homework for all:
+- Split up testing
 
+
+Small bugs/features:
+- Fix scoping in answer/comment models (see shadi comments)
+- Use answer_errors partial for all forms
+- Weird error with new votes -- wtf?
+- Clean up views -- move stuff to partials
+- Move CSS to SASS
