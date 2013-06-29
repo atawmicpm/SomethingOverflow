@@ -3,7 +3,7 @@
     <%= render 'answers/answer_count', :question => question %>
   </div>
   <div id="answers-box">
-    <% question.answers.each do |answer| %>
+    <% question.sorted_answers.each do |answer| %>
       <%= render 'answers/answer', :answer => answer %>
     <% end %>
   </div>

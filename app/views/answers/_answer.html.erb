@@ -1,6 +1,8 @@
 <!-- Too much going on! Move stuff to partials -->
+  <!-- show best answer icon if this is the best answer -->
 
-<div class="answer">
+<div class="answer" <% if answer.best? %>id="best-answer"<% end %>>
+  
   <%= image_tag answer.url, height: '200', width: '200', :class => "answer-image" %>
 
   <div class="product-details">
@@ -11,10 +13,7 @@
     <div><b>Description:</b></div>
     <p class="answer-content"><%= answer.content %></p>
 
-  <!-- show best answer icon if this is the best answer -->
-  <% if answer.best? %>
-    <%= render 'answers/best' %>
-  <% end %>
+
 
   <!-- allow question owner to choose a different best answer -->
 
