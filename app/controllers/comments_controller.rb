@@ -1,9 +1,13 @@
 class CommentsController < ApplicationController
   def create
-    comment = Comment.create(content: params[:content])
-    current_user.comments << comment
-    Answer.find(params[:answer_id]).comments << comment
-    redirect_to :back
+    comment = Comment.new(content: params[:comment][:content])
+    if comment.save
+      current_user.comments << comment
+      Answer.find(params[:comment][:answer_id]).comments << comment
+      render :json => render_to_string(:partial => 'comment', :locals => { :comment => comment }).to_json
+    else
+      render :json => render_to_string(:partial => 'layouts/errors', :locals => { :bad_object => comment }), :status => :unprocessable_entity
+    end
   end
 
   def edit

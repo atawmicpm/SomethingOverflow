@@ -17,7 +17,6 @@ class QuestionsController < ApplicationController
     current_user.questions << @question
 
     if @question.save
-
       redirect_to @question
     else
       flash.now[:errors] = @question.errors.full_messages
@@ -29,6 +28,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answer = Answer.new
+    @comment = Comment.new
   end
 
   def best

@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
     if @answer.save
       render :json => render_to_string(:partial => 'answer', :locals => { :answer => @answer }).to_json
     else
-      render :json => render_to_string(:partial => 'answer_errors', :locals => { :answer => @answer }), :status => :unprocessable_entity
+      render :json => render_to_string(:partial => 'layouts/errors', :locals => { :bad_object => @answer }), :status => :unprocessable_entity
     end
   end
 end
