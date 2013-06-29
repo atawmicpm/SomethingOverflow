@@ -145,7 +145,6 @@
 
         // Only pass url to `ajax` options if not blank
         if (url) { options.url = url; }
-        debugger
         var jqxhr = rails.ajax(options);
         element.trigger('ajax:send', jqxhr);
         return jqxhr;

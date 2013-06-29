@@ -12,3 +12,5 @@
 //
 //= require jquery
 //= require_tree .
+//= require jquery.ui.sortable
+//= require jquery.ui.draggable
