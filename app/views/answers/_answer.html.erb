@@ -24,7 +24,7 @@
 
 
     <% if answer.question.owner?(current_user) %>
-      <%= render 'answers/choose_best' %>
+      <%= render 'answers/choose_best', answer: answer %>
     <% end %>
 
 

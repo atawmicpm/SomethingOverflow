@@ -2,13 +2,15 @@ SomethingOverflow::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
 
   resources :users, :except => :index
-
+  
   resources :questions, :except => [:edit, :update, :destroy]
+  post 'questions/best' => 'questions#best'
 
   resources :answers, :only => [:create]
 
-  resources :comments
 
+
+  resources :comments
   resources :votes, only: [:create, :update]
 
   root :to => 'questions#index'
