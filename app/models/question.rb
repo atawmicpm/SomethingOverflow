@@ -11,17 +11,9 @@ class Question < ActiveRecord::Base
   end
 
   def sorted_answers
-
-    answers = self.answers
-
-    if self.best_answer.nil?
-      answers.sort!{ |a,b| b.vote_count <=> a.vote_count }.reverse
-    else
-      best = answers.select { |answer| answer.id == self.best_answer }
-      not_best = answers.reject! { |answer| answer.id == self.best_answer }
-      not_best.sort!{ |a,b| b.vote_count <=> a.vote_count }.reverse
-      not_best.unshift(best[0])
-    end
+    answers = self.answers.sort!{ |a,b| b.vote_count <=> a.vote_count }
+    return answers if self.best_answer.nil?
+    answers.partition { |answer| answer.id == self.best_answer }.flatten
   end
 
  end
