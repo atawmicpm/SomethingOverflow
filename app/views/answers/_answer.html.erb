@@ -9,10 +9,24 @@
     <div><b>Description:</b></div>
     <p class="answer-content"><%= answer.content %></p>
 
+  <!-- show best answer icon if this is the best answer -->
+  <% if answer.best? %>
+    <%= render 'answers/best' %>
+  <% end %>
+
+  <!-- allow question owner to choose a different best answer -->
+
   <% if current_user %>
 
     <%= render 'votes/vote', voteable: answer %>
     <%= render 'comments/form', answer: answer  %>
+
+
+
+    <% if answer.question.owner?(current_user) %>
+      <%= render 'answers/choose_best' %>
+    <% end %>
+
 
   <% end %>
 

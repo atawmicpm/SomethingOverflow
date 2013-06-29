@@ -12,4 +12,10 @@ class Answer < ActiveRecord::Base
   validates :url, presence: true
 
   default_scope order('created_at DESC')
+
+
+  def best?
+    self.id == self.question.best_answer 
+  end
+
 end

@@ -4,6 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.references  :user
       t.string      :title
       t.text        :content
+      t.integer			:best_answer
 
       t.timestamps
     end
