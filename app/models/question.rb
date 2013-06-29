@@ -11,11 +11,17 @@ class Question < ActiveRecord::Base
   end
 
   def sorted_answers
-  	answers = self.answers
-  	best = answers.select { |answer| answer.id == self.best_answer }
-  	not_best = answers.reject! { |answer| answer.id == self.best_answer }
-  	not_best.sort!{ |a,b| b.vote_count <=> a.vote_count }.reverse
-  	not_best.unshift(best[0])
+
+    answers = self.answers
+
+    if self.best_answer.nil?
+      answers.sort!{ |a,b| b.vote_count <=> a.vote_count }.reverse
+    else
+      best = answers.select { |answer| answer.id == self.best_answer }
+      not_best = answers.reject! { |answer| answer.id == self.best_answer }
+      not_best.sort!{ |a,b| b.vote_count <=> a.vote_count }.reverse
+      not_best.unshift(best[0])
+    end
   end
 
-end
+ end
