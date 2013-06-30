@@ -1,0 +1,23 @@
+#profile-page-title {
+  font-size: 21px;
+  padding-top: 7px;
+}
+
+#user-email {
+  font-size: 17px;
+}
+
+.section-box, .user-answer {
+  border: 1px solid lightgray;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.section-header {
+  font-size: 18px;
+}
+
+.question-title {
+  font-size: 17px;
+  font-weight: 600;
+}
