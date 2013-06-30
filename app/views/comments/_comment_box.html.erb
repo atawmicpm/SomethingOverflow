@@ -1,9 +1,10 @@
-<% if current_user %>
-  <%= render 'comments/form', answer: answer  %>
-<% end %>
-  
-<div class='comment-box'>
-  <% answer.comments.each do |comment| %>
-    <%= render 'comments/comment', comment: comment  %>
-  <% end %>
+<div class="comments">
+  <% if current_user %>
+    <%= render 'comments/form', answer: answer  %>
+  <% end %> 
+  <div class='comment-box'>
+    <% answer.comments.each do |comment| %>
+      <%= render 'comments/comment', comment: comment  %>
+    <% end %>
+  </div>
 </div>

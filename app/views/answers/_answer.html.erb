@@ -1,29 +1,11 @@
-<!-- Too much going on! Move stuff to partials -->
-<!-- show best answer icon if this is the best answer -->
-
-<div class="answer" <% if answer.best? %>id="best-answer"<% end %>>
-  <%= image_tag answer.picture_url, height: '200', width: '200', :class => "answer-image" %>
-
-  <div class="product-details">
-    <p><b>Product Name:</b> <%= answer.product_name %></p>
-
-    <p class="answer-content"><%= answer.content %></p>
-    
+<div class="answer-box">
+  <div class="answer" <% if answer.best? %>id="best-answer"<% end %>>    
+    <%= render 'answers/details', answer: answer %>
     <%= render 'votes/vote_box', voteable: answer %>
-
-    <% if current_user %>
-      <% if answer.question.owner?(current_user) %>
-        <%= render 'answers/choose_best', answer: answer %>
-      <% end %>
-    <% end %>
-    
+    <%= render 'answers/choose_best', answer: answer %>
     <div class="num-comments"><%= answer.comments.length %> comments</div>
     <%= link_to "Add/View Comments", question_path(answer.question), :class => "comment-toggle" %>
+    <div class="float-clear"></div>
   </div>
-
-  <div class="float-clear"></div>
-</div>
-
-<div class="comments">
   <%= render 'comments/comment_box', answer: answer  %>
 </div>

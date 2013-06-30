@@ -4,8 +4,8 @@ Finish by Monday:
 
 
 Small bugs/features:
-- Get comment div within answer
-- Add vote count to comments and pluralize 'votes' word
+- Put comment div within answer
+- Pluralize 'votes' word (when 1 == 'vote')
 - Use answer_errors partial for all forms (Shiv)
 - Clean up views -- move stuff to partials
 - Move CSS to SASS
