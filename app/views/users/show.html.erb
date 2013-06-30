@@ -1,1 +1,17 @@
-Welcome <%= @user.name %>
+  <p id="profile-page-title"><%= @user.name %> <span id="user-email">(<%= mail_to @user.email %>)<span></p>
+</div>
+
+<div class="section-box">
+  <div class="section-header"><%= pluralize(@user.questions.length, 'Question') %>:</div>
+  <%= render 'questions/index', :questions => @user.questions %>
+</div>
+
+<div class="section-box">
+  <div class="section-header"><%= pluralize(@user.answers.length, 'Answer') %>:</div>
+  <% @user.answers.each do |answer| %>
+    <div class="user-answer">
+      <%= link_to answer.question.title, answer.question, :class => "question-title" %>
+      <%= render 'answers/answer', { :answer => answer, :@comment => Comment.new } %>
+    </div>
+  <% end %>
+</div>

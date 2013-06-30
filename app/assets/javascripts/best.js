@@ -5,6 +5,8 @@ var Best = {
 		$('#answers-box').on('ajax:success', '.best_answer', this.chooseBest);
 	},
 
+	// MEGA MOOOOOOTH!!! Refactor to OOJS plz...
+
 	chooseBest: function() {
 
 		$('.best_answer').show();

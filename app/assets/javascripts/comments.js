@@ -1,13 +1,13 @@
 var Comment = {
   init: function() {
-    $('#answers-box').on('click', '.comment-toggle', this.toggleComment);
+    $('#yield').on('click', '.comment-toggle', this.toggleComment);
     $('.new_comment').on('ajax:success', this.appendComment);
     $('.new_comment').on('ajax:error', this.appendErrors);
   },
 
   toggleComment: function(e) {
     e.preventDefault();
-    var $commentBox = $(this).closest('.answer-box').children('.comments').toggle();
+    $(this).closest('.answer-box').children('.comments').toggle();
   },
 
   appendComment: function(e, data) {

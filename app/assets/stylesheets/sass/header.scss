@@ -2,10 +2,6 @@ body {
 	margin: 0 auto;
 	font-family: sans-serif;
 	
-	ul {
-		padding-left: 250px
-	}
-	
 	a {
 		text-decoration: none;
 		color: #0077cc;
@@ -41,7 +37,8 @@ body {
 
 #home-button {
 	float: left;
-	font-size: 35px;
+	font-family: 'Permanent Marker', sans-serif;
+	font-size: 40px;
 	color: black;
 	margin-bottom: 20px;
 	&:hover {
@@ -57,7 +54,8 @@ body {
 	background-color: gray;
 	color: white;
 	font-size: 18px;
-	margin: 5px 5px 0 0;
+	margin: 19px 5px 0 0;
+	transition: .2s;
 	&:hover {
 		background-color: orange;
 		text-decoration: none;
@@ -75,7 +73,7 @@ body {
 }
 
 #logo-ask-box {
-	margin-top: 30px;
+	margin-top: 25px;
 	height: auto;
 }
 
