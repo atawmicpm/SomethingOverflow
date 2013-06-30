@@ -9,11 +9,9 @@
 
     <p class="answer-content"><%= answer.content %></p>
     
-    <%= render 'votes/num_votes', voteable: answer %>
+    <%= render 'votes/vote_box', voteable: answer %>
 
     <% if current_user %>
-      <%= render 'votes/vote', voteable: answer %>
-
       <% if answer.question.owner?(current_user) %>
         <%= render 'answers/choose_best', answer: answer %>
       <% end %>

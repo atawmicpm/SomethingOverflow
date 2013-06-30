@@ -1,5 +1,6 @@
 var Answer = {
   init: function() {
+
     $('#new_answer').on('ajax:success', this.appendAnswer);
     $('#new_answer').on('ajax:error', this.appendErrors);
   },

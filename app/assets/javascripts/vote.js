@@ -24,12 +24,14 @@ var Vote = {
   upVote: function(e, data) {
     var $upButton = $(this);
     var $downButton = $(this).next();
+    $downButton.closest('.votes-box').find('#num-votes-count').text(data.vote_count);
     Vote.modifyVotes($upButton, $downButton, data.vote_id);
   },
 
   downVote: function(e, data) {
     var $downButton = $(this);
     var $upButton = $(this).prev();
+    $downButton.closest('.votes-box').find('#num-votes-count').text(data.vote_count);
     Vote.modifyVotes($downButton, $upButton, data.vote_id);
   },
 
