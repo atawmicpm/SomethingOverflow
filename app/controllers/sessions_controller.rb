@@ -1,11 +1,11 @@
 class SessionsController < ApplicationController
-  before_filter :store_return_to, :only => [:new]
+  before_filter :store_return_to, :only => [:new, :create]
 
   def new
   end
 
   def create
-    user = User.find_by_email(params[:session][:email])
+    user = User.find_by_email(params[:session][:email]) 
     if user && user.authenticate(params[:session][:password])
       create_session(user)
       redirect_back_or_default user

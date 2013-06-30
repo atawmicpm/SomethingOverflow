@@ -10,10 +10,11 @@ SomethingOverflow::Application.routes.draw do
 
 
 
-  resources :comments
+  resources :comments, :only => [:create, :edit, :update, :destroy]
   resources :votes, only: [:create, :update]
 
   root :to => 'questions#index'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
