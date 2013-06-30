@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_filter :store_return_to, :only => [:new]
+
   def new
   end
 
@@ -6,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       create_session(user)
-      redirect_to user_path(user)
+      redirect_back_or_default user
     else
       flash.now[:errors] = ["Wrong username or password"]
       render :new

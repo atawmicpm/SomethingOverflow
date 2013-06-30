@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :store_return_to, :only => [:new]
+
   def new
     if current_user
       redirect_to current_user
@@ -11,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       create_session(@user)
-      redirect_to @user
+      redirect_back_or_default @user
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new

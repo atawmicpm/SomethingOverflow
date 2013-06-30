@@ -17,6 +17,7 @@
           <%= link_to "profile", user_path(current_user), :class => "nav-button" %>
         <% else %>
           <%= link_to "login", new_session_path, :class => "nav-button" %>
+          <%= link_to "sign up", new_user_path, :class => "nav-button" %>
         <% end %>
       </div>
     </header>
