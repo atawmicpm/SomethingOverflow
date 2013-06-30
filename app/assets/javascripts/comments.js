@@ -7,7 +7,7 @@ var Comment = {
 
   toggleComment: function(e) {
     e.preventDefault();
-    var $commentBox = $(this).parent().parent().next().toggle();
+    var $commentBox = $(this).closest('.answer-box').children('.comments').toggle();
   },
 
   appendComment: function(e, data) {
