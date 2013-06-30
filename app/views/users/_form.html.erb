@@ -1,7 +1,9 @@
-<%= form_for @user do |f| %>
-  <%= f.text_field :name, :placeholder => 'Name' %>
-  <%= f.text_field :email, :placeholder => 'Email' %>
-  <%= f.password_field :password, :placeholder => 'Password'  %>
-  <%= f.password_field :password_confirmation, :placeholder => "Confirm password" %>
-  <%= f.submit %>
-<% end %>
+<div id="login-signup-form">
+  <%= form_for @user do |f| %>
+    <%= f.text_field :name, :class => "form-input", :placeholder => 'Name' %>
+    <%= f.text_field :email, :class => "form-input", :placeholder => 'Email' %>
+    <%= f.password_field :password, :class => "form-input", :placeholder => 'Password'  %>
+    <%= f.password_field :password_confirmation, :class => "form-input", :placeholder => "Confirm password" %>
+    <%= f.submit "Create Account", :class => "form-button" %>
+  <% end %>
+</div>

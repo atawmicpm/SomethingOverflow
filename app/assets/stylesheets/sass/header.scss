@@ -21,6 +21,45 @@ body {
 		background-color: #eee;
 		height: 30px;
 	}
+
+	.form-input {
+		width: 385px;
+		height: 30px;
+		font-size: 15px;
+		padding-left: 10px;
+		margin-bottom: 10px;
+	}
+
+	.form-button {
+		height: 36px;
+		font-size: 17px;
+		padding: 0 30px;
+		border: none;
+		background-color: gray;
+		color: white;
+		transition: .2s;
+		&:hover {
+			cursor: hand; cursor: pointer;
+			background-color: orange;
+		}
+	}
+
+	.errors {
+		width: 400px;
+		border: 1px solid red;
+		padding: 10px;
+		padding-left: 15px;
+		margin: 25px auto 0 auto;
+		background-color: pink;
+		color: red;
+		font-size: 15px;
+		.error-header {
+			margin-bottom: 5px;
+		}
+		.error {
+			margin-left: 10px;
+		}
+	}
 }
 
 #nav-links {
