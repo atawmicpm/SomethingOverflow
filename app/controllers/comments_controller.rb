@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   def create
+    p params
     comment = Comment.new(content: params[:comment][:content])
     if comment.save
       current_user.comments << comment
