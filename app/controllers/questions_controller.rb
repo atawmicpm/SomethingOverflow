@@ -7,7 +7,8 @@ class QuestionsController < ApplicationController
     if current_user
       @question = Question.new
     else
-      render 'sessions/new'
+      session[:return_to] = request.url
+      redirect_to new_session_path
     end
   end
 
@@ -17,7 +18,6 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to @question
     else
-      flash.now[:errors] = @question.errors.full_messages
       render :new
     end
   end

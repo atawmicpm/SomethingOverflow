@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_filter :store_return_to, :only => [:new, :create]
+  before_filter :store_return_to, :only => [:new]
 
   def new
   end

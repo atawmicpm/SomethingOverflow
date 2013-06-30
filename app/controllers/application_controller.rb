@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def store_return_to
-    session[:return_to] = request.referer
+    session[:return_to] = request.referer unless session[:return_to]
   end
 
   def redirect_back_or_default(default)
