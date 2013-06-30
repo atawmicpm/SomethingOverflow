@@ -17,7 +17,5 @@ describe Answer do
       Vote.create(value: 1, votable_id: answer.id, votable_type: Comment::VOTEABLE_TYPE)
       answer.current_vote_count.should eq(2)
     end
-
   end
-
 end
