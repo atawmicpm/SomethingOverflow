@@ -1,7 +1,8 @@
 class VotesController < ApplicationController
-  
+  include ActionView::Helpers::TextHelper
+
   def vote_count(voteable_type, voteable_id)
-    eval(voteable_type).find(voteable_id).vote_count
+    pluralize(eval(voteable_type).find(voteable_id).vote_count, 'vote')
   end
 
   def create
