@@ -6,7 +6,7 @@
   display: none;
 }
 
-.comment-form form #content {
+#comment_content {
   width: 75%;
 }
 
