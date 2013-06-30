@@ -28,16 +28,7 @@ describe Comment do
 			comment.votes.each do |vote|
 				total_votes += vote.value
 			end
-			total_votes.should eq(5)
-		end
-
-		it "should  current comment" do
-			comment.votes << vote
-			comment.votes << vote2
-			total_votes = 0
-			comment.votes.each do |vote|
-				total_votes += vote.value
-			end
 			total_votes.should eq(2)
+		end
 	end
 end

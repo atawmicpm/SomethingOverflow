@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CommentsController do
+describe AnswersController do
 
 	let(:user) { FactoryGirl.create(:user) }
 	let(:answer) { FactoryGirl.create(:answer) }
@@ -19,7 +19,7 @@ describe CommentsController do
 	context "with valid attributes" do
 		it "creates a new comment" do
 			comment_attributes[:answer_id] = answer.id
-
+			
 			expect {
 				post :create, comment: comment_attributes
 			}.to change(Comment, :count).by(1)
@@ -61,4 +61,3 @@ describe CommentsController do
 	end
 
 end
-
