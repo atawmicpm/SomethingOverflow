@@ -29,4 +29,11 @@ FactoryGirl.define do
   	content nil
   end
 
+  factory :vote do
+  	user
+  	voteable_id 1
+  	voteable_type 'Comment'
+  	value 1
+  end
+
 end

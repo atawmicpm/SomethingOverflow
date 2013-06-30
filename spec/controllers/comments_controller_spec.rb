@@ -39,7 +39,7 @@ describe CommentsController do
 
 	context "with invalid attributes" do
 		it "does not save the new comment" do
-			comment_attributes[:answer_id] = answer.id
+			invalid_comment_attributes[:answer_id] = answer.id
 
 			expect {
 				post :create, comment: invalid_comment_attributes 
