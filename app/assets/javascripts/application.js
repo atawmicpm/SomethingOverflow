@@ -11,10 +11,10 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require_tree .
 //= require jquery.simulate.js
 //= require jquery.simulate.ext.js
 //= require jquery.simulate.drag-n-drop.js
 //= require jquery.ui.sortable
 //= require jquery.ui.draggable
+//= require_tree .
 

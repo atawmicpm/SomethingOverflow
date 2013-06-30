@@ -2,39 +2,36 @@ var Best = {
 
 	init: function() {
 		this.setBest();
-		$('#answers-box').on('ajax:success', '.best_answer', this.chooseBest)
+		$('#answers-box').on('ajax:success', '.best_answer', this.chooseBest);
 	},
 
 	chooseBest: function() {
-		// $('.best_answer').show();
-		// $('.answer').css('border', '1px solid white');
-		// $('.answer').css('background-color', '#eee');
-
-		
-
-		// var $clone = $(this).closest('.answer').clone();
-		// $(this).closest('.answer').css('opacity', '0').hide('blind', {}, 700, function() { 
-		// 	$(this).remove();
-		// });
-		// setTimeout(function(){
-		// 	$(this).hide();
-		// 	$clone.css('background-color','#DCF0F7');
-		// 	$clone.css('border','1px solid lightblue');
-
-		// 	$('#answers-box').prepend($clone)
-		// 	$clone.hide().show('blind');
-		// }, 700);
-
-
 
 		$('.best_answer').show();
 		$('.answer').css('border', '1px solid white');
 		$('.answer').css('background-color', '#eee');
-		
+
 		$(this).hide();
-		
-		$(this).closest('.answer').css('background-color','#DCF0F7');
-		$(this).closest('.answer').css('border','1px solid lightblue');
+
+		var bestAnswer = $(this).closest('.answer');
+		var firstAnswer = $('#answers-box').children().first();
+
+		firstAnswer.animate({opacity: "0.0"});
+		var firstClone = firstAnswer.clone();
+
+		bestAnswer.animate({opacity: "0.0"});
+		var bestClone = bestAnswer.clone();
+
+		firstAnswer.replaceWith(bestClone);
+		bestClone.css("opacity", "0.0");
+		bestClone.css('background-color','#DCF0F7');
+		bestClone.css('border','1px solid lightblue');
+		bestClone.animate({opacity: "1.0"});
+
+		bestAnswer.replaceWith(firstClone);
+		firstClone.css("opacity", "0.0");
+		firstClone.animate({opacity: "1.0"});
+
 	},
 
 	setBest: function() {
@@ -44,7 +41,7 @@ var Best = {
 		$('#best-answer').children().find('.best_answer').hide();
 	}
 
-}
+};
 
 $(document).ready(function() {
 	Best.init();
