@@ -1,13 +1,7 @@
-<% if current_user %>
-  <%= render 'comments/form', answer: answer  %>
-<% end %>
-  
-<% answer.comments.each do |comment| %>
-  <div class="comment">
-    <% if current_user %>
-      <%= render 'votes/vote', voteable: comment %>
-    <% end %>
-  
-    <div class="comment-text"><%= comment.content %></div>
-  </div>
-<% end %>
+<div class="comment">
+  <% if current_user %>
+    <%= render 'votes/vote', voteable: comment %>
+  <% end %>
+
+  <div class="comment-text"><%= comment.content %></div>
+</div>

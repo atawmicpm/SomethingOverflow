@@ -7,6 +7,7 @@ class Comment < ActiveRecord::Base
   # so this line would be attr_accessible :content, :user, :answer
   # now when you mass assign: Comment.new :user => current_user, :answer => @answer.  
   attr_accessible :content, :user_id, :answer_id
+  validates :content, presence: true
 
   default_scope order('created_at DESC')
 
