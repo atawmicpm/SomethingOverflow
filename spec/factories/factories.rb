@@ -9,9 +9,9 @@ FactoryGirl.define do
   end
 
   factory :question do
+    user
   	title "title"
   	content "this is the question content"
-  	user
   end
 
   factory :answer do 
@@ -49,4 +49,12 @@ FactoryGirl.define do
   	value 1
   end
 
+  factory :invalid_vote, parent: :vote do
+    voteable_type 
+    voteable_id
+  end
+
+  factory :updated_vote, parent: :vote do
+    value -1
+  end
 end
