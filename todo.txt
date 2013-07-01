@@ -4,5 +4,5 @@ Finish by Monday:
 
 
 Small bugs/features:
-- Custom validation for Amazon URL
 - Make timestamps actually work
+- Move CSS to SASS

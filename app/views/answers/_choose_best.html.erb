@@ -1,9 +1,9 @@
-<% if answer.question.owner?(current_user) %>
-    <%= link_to "BEST ANSWER", 
-        questions_best_path(:answer => answer.id), 
-        :method => :post, 
-        remote: true, 
-        :class => "best_answer" 
-    %>
-  <% end %>
+<% if current_user && answer.question.owner?(current_user) %>
+  <%= link_to "BEST ANSWER", 
+      questions_best_path(:answer => answer.id), 
+      :method => :post, 
+      remote: true, 
+      :class => "best_answer" 
+  %>
+<% end %>
 
