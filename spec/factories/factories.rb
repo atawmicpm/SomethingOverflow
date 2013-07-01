@@ -14,6 +14,11 @@ FactoryGirl.define do
   	content "this is the question content"
   end
 
+  factory :invalid_question, parent: :question do
+    title nil
+    content nil
+  end
+
   factory :answer do 
   	content "this is an answer"
   	url "http://www.amazon.com/Beanie-Boos-Julep-Monkey-Heart/dp/B005XH7L2K/ref=sr_1_3?s=toys-and-games&ie=UTF8&qid=1372640601&sr=1-3&keywords=heart"
