@@ -1,0 +1,35 @@
+.answer {
+  margin: 20px 20px 0 20px;
+  padding: 20px;
+  background-color: #eee;
+  min-height: 200px;
+  position: relative;
+}
+
+.best_answer {
+  float: right;
+}
+
+.answer-image {
+  float: left;
+  border: 2px solid darkgray;
+  background-color: white;
+  margin-right: 20px;
+}
+
+.product-details p {
+  margin-bottom: 15px;
+}
+
+.answer .vote-buttons {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  width: 20px;
+  opacity: 0.7;
+  transition: .5s;
+}
+
+.answer .vote-buttons:hover {
+  opacity: 1;
+}
