@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
   has_secure_password
 
-  validates :name, :email, :password, presence: true
+  validates :name, :email, :password, :password_confirmation, presence: true
   validates :email, uniqueness: true
 
   def find_vote(voteable)
