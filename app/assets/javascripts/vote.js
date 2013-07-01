@@ -56,7 +56,15 @@ var Vote = {
   },
 
   sortAnswers: function() {
-    $('.answer-box:not(:first)').tsort('#num-votes', { order: 'desc' });
+    var $answer;
+
+    if ($('#best-answer').length > 0) {
+      $answer = $('.answer-box:not(:first)');
+    } else {
+      $answer = $('.answer-box');
+    }
+
+    $answer.tsort('#num-votes', { order: 'desc' });
   },
 
   // sortAnswers: function() {
