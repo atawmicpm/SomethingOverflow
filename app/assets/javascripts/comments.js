@@ -19,7 +19,15 @@ var Comment = {
   },
 
   appendComment: function(e, data) {
-    $(this).parent().siblings().closest('.comment-box').prepend(data);
+    var commentBox = $(this).parent().siblings().closest('.comment-box');
+
+    if (commentBox.children().length === 0) {
+      commentBox.html(data);
+    }
+    else {
+      commentBox.prepend(data);
+    }
+
     Comment.clearInput();
     var $errorsBox = $(this).closest('.comments').children('#errors');
     Comment.clearMessages($errorsBox);
