@@ -44,9 +44,6 @@ var Best = {
 		bestAnswer.css('background-color','#DCF0F7');
 		bestAnswer.css('border','1px solid lightblue');
 	}
-
-
-
 };
 
 $(document).ready(function() {
