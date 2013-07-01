@@ -33,26 +33,31 @@ Question.all.each do |question|
   user.questions << question
 end
 
-30.times do
-  Answer.create(url: "http://www.amazon.com/Plan-Toys-0553500-PlanToys-Construction/dp/B0015D2522/ref=sr_1_5?s=toys-and-games&ie=UTF8&qid=1372665952&sr=1-5&keywords=building+blocks", 
-                content: Faker::Lorem.paragraph)
-  sleep(5)
-end
-
-Answer.all.each do |answer|
-  user = User.find(rand(1..10))
-  question = Question.find(rand(1..9))
+9.times do |n|
+  user = User.find(n+1)
+  question = Question.find(n+1)
+  answer = Answer.create(url: "http://www.amazon.com/Plan-Toys-0553500-PlanToys-Construction/dp/B0015D2522/ref=sr_1_5?s=toys-and-games&ie=UTF8&qid=1372665952&sr=1-5&keywords=building+blocks", 
+                         content: Faker::Lorem.paragraph)
   user.answers << answer
   question.answers << answer
 end
 
-100.times do
+9.times do |n|
+  user = User.find(n+1)
+  question = Question.find(n+1)
+  answer = Answer.create(url: "http://www.amazon.com/thu-80MOBPHN-Retro-iPhone-Case/dp/B004SC82DS/ref=sr_1_2?ie=UTF8&qid=1372668163&sr=8-2&keywords=funny+iphone+4+case", 
+                         content: Faker::Lorem.paragraph)
+  user.answers << answer
+  question.answers << answer
+end
+
+50.times do
   Comment.create(content: Faker::Lorem.sentence)
 end
 
 Comment.all.each do |comment|
   user = User.find(rand(1..10))
-  answer = Answer.find(rand(1..30))
+  answer = Answer.find(rand(1..18))
   user.comments << comment
   answer.comments << comment
 end
@@ -104,14 +109,14 @@ comments.each do |comment|
   answer.comments << comment
 end
 
-400.times do |n|
-  user = User.find(rand(1..10))
-  value = n.even? ? -1 : 1
-  Vote.create(value: value, user_id: user.id, voteable_id: rand(1..35), voteable_type: 'Answer')
-end
-
 1000.times do |n|
   user = User.find(rand(1..10))
   value = n.even? ? -1 : 1
-  Vote.create(value: value, user_id: user.id, voteable_id: rand(1..110), voteable_type: 'Comment')
+  Vote.create(value: value, user_id: user.id, voteable_id: rand(1..23), voteable_type: 'Answer')
+end
+
+400.times do |n|
+  user = User.find(rand(1..10))
+  value = n.even? ? -1 : 1
+  Vote.create(value: value, user_id: user.id, voteable_id: rand(1..65), voteable_type: 'Comment')
 end
