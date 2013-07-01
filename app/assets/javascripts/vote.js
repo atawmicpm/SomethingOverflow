@@ -25,12 +25,14 @@ var Vote = {
     var $upButton = $(this);
     var $downButton = $(this).next();
     Vote.modifyVotes($upButton, $downButton, data.vote_id, data.vote_count);
+    Vote.sortAnswers();
   },
 
   downVote: function(e, data) {
     var $downButton = $(this);
     var $upButton = $(this).prev();
     Vote.modifyVotes($downButton, $upButton, data.vote_id, data.vote_count);
+    Vote.sortAnswers();
   },
 
   modifyVotes: function(live_button, disabled_button, vote_id, vote_count) {
@@ -53,6 +55,32 @@ var Vote = {
     });
   },
 
+  // sortAnswers: function() {
+  //   $('.answer-box:not(:first)').tsort('#num-votes', { order: 'desc' });
+  // },
+
+  sortAnswers: function() {
+    var $answersBox = $('#answers-box');
+    $answersBox.css({position:'relative',height:$answersBox.height(),display:'block'});
+
+    var answerBoxHeight;
+    var $answer = undefined;
+    var $answer = $('.answer-box:not(:first)');
+
+    $answer.each(function(index, answer){
+      var answerTopPosition = $(answer).position().top;
+      $.data(answer,'topPosition',answerTopPosition);
+      if (index===0) answerBoxHeight = answerTopPosition;
+    });
+    
+    $answer.tsort('#num-votes', { order: 'desc' }).each(function(index,answer){
+      var $Answer = $(answer);
+      var indexFrom = $.data(answer,'topPosition');
+      var indexTo = ((index+1)*answerBoxHeight);
+      $Answer.css({position:'absolute',top:indexFrom}).animate({top:indexTo},500);
+    });
+  },
+
   modifyDisabledVote: function(disabled_button) {
     var voteID = disabled_button.parent().data('vote-id');
     var newLink = disabled_button.attr('href').replace(/votes\?/, 'votes/' + voteID + '?');
@@ -65,4 +93,5 @@ var Vote = {
 
 $(document).ready(function() {
   Vote.init();
+  // Vote.sortAnswers();
 });
