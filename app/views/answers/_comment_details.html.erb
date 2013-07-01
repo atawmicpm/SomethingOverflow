@@ -1,0 +1,6 @@
+<div class="num-comment-box">
+  <div class="num-comments"><%= answer.comments.length %></div>
+  <div class="word-comments"><%= answer.comments.length == 1 ? "comment" : "comments" %></div>
+</div>
+
+<%= link_to "Add/View Comments", question_path(answer.question), :class => "comment-toggle" %>

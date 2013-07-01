@@ -1,6 +1,7 @@
 <div class="votes-box">
   <%= render 'votes/num_votes', voteable: voteable %>
-  <% if current_user %>
-    <%= render 'votes/vote', voteable: voteable %>
-  <% end %>
 </div>
+<% if current_user %>
+  <%= render 'votes/vote', voteable: voteable %>
+<% end %>
+

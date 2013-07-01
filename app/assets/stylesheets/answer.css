@@ -1,0 +1,119 @@
+.answer {
+  margin: 20px 20px 0 20px;
+  padding: 20px;
+  background-color: #eee;
+  min-height: 200px;
+  position: relative;
+}
+
+.best_answer {
+  float: right;
+}
+
+.answer-image {
+  float: left;
+  border: 2px solid darkgray;
+  background-color: white;
+  margin-right: 20px;
+}
+
+.product-details {
+  width: 750px;
+}
+
+.product-details p {
+  margin-bottom: 15px;
+}
+
+.answer-user {
+  float: left;
+  font-size: 13px;
+}
+
+.answer-timestamp {
+  float: left;
+  font-size: 13px;
+  color: gray;
+  margin-right: 5px;
+}
+
+.answer .vote-buttons {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  width: 20px;
+  opacity: 0.7;
+  transition: .5s;
+}
+
+.answer .vote-buttons:hover {
+  opacity: 1;
+}
+
+.answer .votes-box {
+  position: absolute;
+  top: 20px;
+  right: 105px;
+}
+
+.votes-box {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border: 1px solid gray;
+  padding-top: 5px;
+  color: #363636;
+}
+
+#num-votes {
+  text-align: center;
+  font-size: 20px;
+}
+
+.word-votes {
+  font-size: 13px;
+  text-align: center;
+}
+
+.num-comment-box {
+  box-sizing: border-box;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  height: 50px;
+  border: 1px solid gray;
+  padding-top: 5px;
+  color: #363636;
+}
+
+.num-comments {
+  text-align: center;
+  font-size: 20px;
+}
+
+.word-comments {
+  font-size: 13px;
+  text-align: center;
+}
+
+.comment-toggle {
+  position: absolute;
+  bottom: 22px;
+  left: 245px;
+}
+
+.best_answer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  font-size: 13px;
+  border: 1px solid darkblue;
+  transition: .2s;
+}
+
+.best_answer:hover {
+  background-color: lightblue;
+  text-decoration: none;
+}

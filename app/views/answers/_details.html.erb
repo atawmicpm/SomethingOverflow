@@ -1,5 +1,7 @@
 <div class="product-details">
   <%= image_tag answer.picture_url, height: '200', width: '200', :class => "answer-image" %>
   <p><b>Product Name:</b> <%= answer.product_name %></p>
-  <p class="answer-content"><%= answer.content %></p>
+  <p class="answer-content"><b>Review:</b> <%= answer.content %></p>
+  <p class="answer-timestamp">asked 16 hours ago</p>
+  <%= link_to answer.user.name, user_path(answer.user), :class => "answer-user" %>
 </div>

@@ -4,5 +4,6 @@ Finish by Monday:
 
 
 Small bugs/features:
-- Use answer_errors partial for all forms (Shiv)
+- Custom validation for Amazon URL
+- Make timestamps actually work
 - Move CSS to SASS

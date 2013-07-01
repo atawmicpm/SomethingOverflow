@@ -7,7 +7,15 @@ var Comment = {
 
   toggleComment: function(e) {
     e.preventDefault();
-    $(this).siblings().last().slideToggle();
+ 
+    var link = $(this);
+    link.siblings().last().slideToggle();
+    if (link.text() == "Add/View Comments") {
+      link.text("Hide Comments");
+    }
+    else {
+      link.text("Add/View Comments");
+    }
   },
 
   appendComment: function(e, data) {
@@ -30,7 +38,7 @@ var Comment = {
   clearMessages: function(errorsBox) {
     errorsBox.html('');
   }
-}
+};
 
 $(document).ready(function() {
   Comment.init();
