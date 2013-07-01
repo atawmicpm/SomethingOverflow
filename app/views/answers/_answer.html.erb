@@ -3,8 +3,7 @@
     <%= render 'answers/details', answer: answer %>
     <%= render 'votes/vote_box', voteable: answer %>
     <%= render 'answers/choose_best', answer: answer %>
-    <div class="num-comments"><%= answer.comments.length %> comments</div>
-    <%= link_to "Add/View Comments", question_path(answer.question), :class => "comment-toggle" %>
+    <%= render 'answers/comment_details', answer: answer %>
     <div class="float-clear"></div>
   </div>
   <%= render 'comments/comment_box', answer: answer  %>

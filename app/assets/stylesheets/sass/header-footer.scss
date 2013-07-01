@@ -124,3 +124,14 @@ body {
 #yield {
 	clear: both;
 }
+
+footer {
+	box-sizing: border-box;
+	margin-top: 50px;
+	padding-top: 17px;
+	height: 50px;
+	background-color: #eee;
+	text-align: center;
+	font-size: 15px;
+}
+

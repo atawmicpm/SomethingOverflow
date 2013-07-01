@@ -48,27 +48,3 @@
 #num-of-answers {
   font-size: 20px;
 }
-
-.answer {
-  margin: 20px 20px 0 20px;
-  padding: 20px;
-  background-color: #eee;
-  min-height: 220px;
-
-}
-
-.best_answer {
-  float: right;
-}
-
-.answer-image {
-  float: left;
-  border: 2px solid darkgrey;
-  background-color: white;
-  margin-right: 20px;
-}
-
-.product-details p {
-  margin-bottom: 15px;
-}
-

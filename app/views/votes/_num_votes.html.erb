@@ -1,1 +1,2 @@
-<div id="num-votes"><span id="num-votes-count"><%= pluralize(voteable.vote_count, "vote") %></div>
+<div id="num-votes"><%= voteable.vote_count %></div>
+<div class="word-votes"><%= voteable.vote_count == 1 ? "vote" : "votes" %></div>

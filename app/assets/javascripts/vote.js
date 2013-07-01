@@ -41,11 +41,11 @@ var Vote = {
   },
 
   updateVoteCount: function(button, vote_count) {
-    button.closest('.votes-box').find('#num-votes-count').text(vote_count);
+    button.closest('.answer').find('#num-votes').text(vote_count);
   },
 
   modifyLiveVote: function(live_button) {
-    live_button.css('opacity', '0.5');
+    live_button.css('opacity', '1');
     live_button.attr('data-method', 'put');
     live_button.prop('disabled', true);
     live_button.on("click", function(e) {
@@ -59,7 +59,7 @@ var Vote = {
     disabled_button.attr('href', newLink);
     disabled_button.prop('disabled', false);
     disabled_button.attr('data-method', 'put');
-    disabled_button.css('opacity', '1');
+    disabled_button.css('opacity', '0.5');
   }
 };
 
