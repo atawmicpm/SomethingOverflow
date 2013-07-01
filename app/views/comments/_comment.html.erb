@@ -1,4 +1,8 @@
 <div class="comment">
-  <div class="comment-text"><%= comment.content %></div>
+  <div class="comment-details">
+    <div class="comment-text"><%= comment.content %></div>
+    <p class="comment-timestamp">commented 16 hours ago</p>
+    <%= link_to comment.user.name, user_path(comment.user), :class => "comment-user" %>
+  </div>
   <%= render 'votes/vote_box', voteable: comment %>
 </div>
