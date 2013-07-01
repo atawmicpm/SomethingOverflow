@@ -15,6 +15,6 @@ class VotesController < ApplicationController
 
   protected
     def vote_count(voteable_type, voteable_id)
-      pluralize(eval(voteable_type).find(voteable_id).vote_count, 'vote')
+      eval(voteable_type).find(voteable_id).vote_count
     end
 end
