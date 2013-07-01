@@ -1,7 +1,12 @@
-<%= form_for(:session, url: sessions_path) do |f| %>
-  <%= f.text_field :email, :placeholder => 'Email' %>
-  <%= f.password_field :password, :placeholder => 'Password'  %>
-  <%= f.submit "Login" %>
-<% end %>
+  <p id="standard-page-title">Login</p>
+</div>
+<%= render 'layouts/flash_errors' %>
+<div id="login-signup-form">
+  <%= form_for(:session, url: sessions_path) do |f| %>
+    <%= f.text_field :email, :class => "form-input", :placeholder => 'Email' %>
+    <%= f.password_field :password, :class => "form-input", :placeholder => 'Password'  %>
+    <%= f.submit "Login", :class => "form-button" %>
+  <% end %>
+  <%= link_to "Or create a new account", new_user_path, :id => "sign-up-link" %>
+</div>
 
-<%= link_to "Sign Up", new_user_path %>

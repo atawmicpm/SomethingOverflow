@@ -11,14 +11,14 @@ var Comment = {
   },
 
   appendComment: function(e, data) {
-    var $errorsBox = $(this).parent().next();
-    $errorsBox.next().prepend(data);
+    $(this).closest('.comments').children('.comment-box').prepend(data);
     Comment.clearInput();
+    var $errorsBox = $(this).closest('.comments').children('#errors');
     Comment.clearMessages($errorsBox);
   },
 
   appendErrors: function(e, xhr) {
-    var $errorsBox = $(this).parent().next();
+    var $errorsBox = $(this).closest('.comments').children('#errors');
     Comment.clearMessages($errorsBox);
     $errorsBox.append(xhr.responseText);
   },

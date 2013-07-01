@@ -1,5 +1,10 @@
-<%= form_for @question do |f| %>
-  <%= f.text_field :title, :placeholder => 'Title' %>
-  <%= f.text_area :content, :placeholder => 'Content' %>
-  <%= f.submit "Create Question" %>
-<% end %>
+  <p id="standard-page-title">Post New Question</p>
+</div>
+<%= render 'layouts/flash_errors' %>
+<div id="question-form">
+  <%= form_for @question do |f| %>
+    <%= f.text_field :title, :class => "form-input", :id => "question-title", :placeholder => 'Title' %>
+    <%= f.text_area :content, :class => "form-input", :id => "question-content", :placeholder => 'Content' %>
+    <%= f.submit "Create Question", :class => "form-button" %>
+  <% end %>
+</div>
