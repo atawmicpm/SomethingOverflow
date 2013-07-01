@@ -11,7 +11,8 @@ gem 'faker'
 gem 'mechanize'
 gem "selenium-webdriver"
 gem 'database_cleaner'
-gem 'capybara-webkit'
+#gem 'capybara-webkit'
+
 
 group :development, :test do
   gem 'rspec-rails'
