@@ -40,6 +40,22 @@
   top: 15px;
 }
 
-.comment-text {
+.comment-details {
   padding-left: 120px;
+}
+
+.comment-text {
+  margin-bottom: 15px;
+}
+
+.comment-timestamp {
+  float: left;
+  font-size: 13px;
+  color: gray;
+  margin-right: 5px;
+}
+
+.comment-user {
+  float: left;
+  font-size: 13px;
 }
