@@ -1,6 +1,6 @@
 <div id="question-details-box">
   <div id="details-box">
     <%= link_to question.user.name, user_path(question.user.id), :class => "question-user" %>
-    <p class="timestamp">asked 16 hours ago</p>
+    <p class="timestamp">asked <%= time_ago_in_words(question.created_at) %> ago</p>
   </div>
 </div>
