@@ -99,18 +99,17 @@
 
 .comment-toggle {
   position: absolute;
-  top: 205px;
+  top: 200px;
   left: 245px;
 }
 
 .best_answer {
   position: absolute;
-  bottom: 20px;
+  top: 185px;
   right: 20px;
   padding: 10px;
   font-size: 13px;
   border: 1px solid gray;
-  box-shadow: 2px 2px 1px darkblue;
   transition: .2s;
 }
 
