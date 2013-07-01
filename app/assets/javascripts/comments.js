@@ -7,7 +7,14 @@ var Comment = {
 
   toggleComment: function(e) {
     e.preventDefault();
-    $(this).closest('.answer-box').children('.comments').toggle();
+    var link = $(this);
+    link.closest('.answer-box').children('.comments').toggle();
+    if (link.text() == "Add/View Comments") {
+      link.text("Hide Comments");
+    }
+    else {
+      link.text("Add/View Comments");
+    }
   },
 
   appendComment: function(e, data) {
@@ -30,7 +37,7 @@ var Comment = {
   clearMessages: function(errorsBox) {
     errorsBox.html('');
   }
-}
+};
 
 $(document).ready(function() {
   Comment.init();
