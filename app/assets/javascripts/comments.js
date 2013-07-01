@@ -7,8 +7,9 @@ var Comment = {
 
   toggleComment: function(e) {
     e.preventDefault();
+ 
     var link = $(this);
-    link.closest('.answer-box').children('.comments').toggle();
+    link.siblings().last().slideToggle();
     if (link.text() == "Add/View Comments") {
       link.text("Hide Comments");
     }
@@ -18,7 +19,7 @@ var Comment = {
   },
 
   appendComment: function(e, data) {
-    $(this).closest('.comments').children('.comment-box').prepend(data);
+    $(this).parent().siblings().closest('.comment-box').prepend(data);
     Comment.clearInput();
     var $errorsBox = $(this).closest('.comments').children('#errors');
     Comment.clearMessages($errorsBox);

@@ -1,5 +1,4 @@
-<% if current_user %>
-  <% if answer.question.owner?(current_user) %>
+<% if answer.question.owner?(current_user) %>
     <%= link_to "BEST ANSWER", 
         questions_best_path(:answer => answer.id), 
         :method => :post, 
@@ -7,4 +6,4 @@
         :class => "best_answer" 
     %>
   <% end %>
-<% end %>
+
