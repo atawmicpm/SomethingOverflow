@@ -55,38 +55,38 @@ var Vote = {
     });
   },
 
-  // sortAnswers: function() {
-  //   $('.answer-box:not(:first)').tsort('#num-votes', { order: 'desc' });
-  // },
-
   sortAnswers: function() {
-    var $answersBox = $('#answers-box');
-    $answersBox.css({position:'relative',height:$answersBox.height(),display:'block'});
-
-    var answerBoxHeight;
-    var $answer;
-    var first = 0;
-
-    if ($('#best-answer').length > 0) {
-      $answer = $('.answer-box:not(:first)');
-    } else {
-      $answer = $('.answer-box');
-      first = 1;
-    }
-
-    $answer.each(function(index, answer){
-      var answerTopPosition = $(answer).position().top;
-      $.data(answer,'topPosition',answerTopPosition);
-      if (index===first) answerBoxHeight = answerTopPosition;
-    });
-    
-    $answer.tsort('#num-votes', { order: 'desc' }).each(function(index,answer){
-      var $Answer = $(answer);
-      var indexFrom = $.data(answer,'topPosition');
-      var indexTo = ((index+1)*answerBoxHeight);
-      $Answer.css({position:'absolute',top:indexFrom}).animate({top:indexTo},500);
-    });
+    $('.answer-box:not(:first)').tsort('#num-votes', { order: 'desc' });
   },
+
+  // sortAnswers: function() {
+  //   var $answersBox = $('#answers-box');
+  //   $answersBox.css({position:'relative',height:$answersBox.height(),display:'block'});
+
+  //   var answerBoxHeight;
+  //   var $answer;
+  //   var first = 0;
+
+  //   if ($('#best-answer').length > 0) {
+  //     $answer = $('.answer-box:not(:first)');
+  //   } else {
+  //     $answer = $('.answer-box');
+  //     first = 1;
+  //   }
+
+  //   $answer.each(function(index, answer){
+  //     var answerTopPosition = $(answer).position().top;
+  //     $.data(answer,'topPosition',answerTopPosition);
+  //     if (index===first) answerBoxHeight = answerTopPosition;
+  //   });
+    
+  //   $answer.tsort('#num-votes', { order: 'desc' }).each(function(index,answer){
+  //     var $Answer = $(answer);
+  //     var indexFrom = $.data(answer,'topPosition');
+  //     var indexTo = ((index+1)*answerBoxHeight);
+  //     $Answer.css({position:'absolute',top:indexFrom}).animate({top:indexTo},500);
+  //   });
+  // },
 
   resetAnswersRelative: function() {
     var $answer = $('.answer-box:not(:first)');
