@@ -8,7 +8,7 @@ var Best = {
 	setBest: function() {
 		$('#best-answer').css('background-color','#DCF0F7');
 		$('#best-answer').css('border','1px solid lightblue');
-		$('#best-answer').children().find('.best_answer').hide();
+		$('#best-answer').find('.best_answer').hide();
 	},
 
 	chooseBestAnswer: function() {
