@@ -1,9 +1,15 @@
 .comments {
-  width: 87%;
+  width: 920px;
   margin: 0 auto;
   padding: 20px;
-  background-color: lightgray;
+  padding-top: 1px;
+  background-color: #eee;
   display: none;
+}
+
+.comment:nth-child(1) {
+  margin-top: -5px;
+  border: none;
 }
 
 #comment_content {
@@ -12,7 +18,32 @@
 }
 
 .comment {
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: 15px;
+  padding-top: 15px;
+  min-height: 50px;
   border-top: 1px solid gray;
+  position: relative;
+}
+
+.comment .vote-buttons {
+  position: absolute;
+  left: 15px;
+  top: 22px;
+  width: 20px;
+  opacity: 0.7;
+  transition: .5s;
+}
+
+.comment .vote-buttons:hover {
+  opacity: 1;
+}
+
+.comment .votes-box {
+  position: absolute;
+  left: 50px;
+  top: 15px;
+}
+
+.comment-text {
+  padding-left: 120px;
 }
