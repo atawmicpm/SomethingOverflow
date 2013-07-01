@@ -17,6 +17,7 @@ var Best = {
 		
 		Best.hideBestAnswerLink($(this));
 		Best.replaceBestAnswer(firstAnswer, bestAnswer);
+		Vote.sortAnswers();
 	},
 
 	hideBestAnswerLink: function(bestAnswerLink) {
