@@ -64,12 +64,20 @@ var Vote = {
     $answersBox.css({position:'relative',height:$answersBox.height(),display:'block'});
 
     var answerBoxHeight;
-    var $answer = $('.answer-box:not(:first)');
+    var $answer;
+    var first = 0;
+
+    if ($('#best-answer').length > 0) {
+      $answer = $('.answer-box:not(:first)');
+    } else {
+      $answer = $('.answer-box');
+      first = 1;
+    }
 
     $answer.each(function(index, answer){
       var answerTopPosition = $(answer).position().top;
       $.data(answer,'topPosition',answerTopPosition);
-      if (index===0) answerBoxHeight = answerTopPosition;
+      if (index===first) answerBoxHeight = answerTopPosition;
     });
     
     $answer.tsort('#num-votes', { order: 'desc' }).each(function(index,answer){
@@ -78,10 +86,6 @@ var Vote = {
       var indexTo = ((index+1)*answerBoxHeight);
       $Answer.css({position:'absolute',top:indexFrom}).animate({top:indexTo},500);
     });
-
-    // setTimeout(function(){ 
-    //   Vote.resetAnswersRelative();
-    // },510);
   },
 
   resetAnswersRelative: function() {
@@ -104,5 +108,4 @@ var Vote = {
 
 $(document).ready(function() {
   Vote.init();
-  // Vote.sortAnswers();
 });
