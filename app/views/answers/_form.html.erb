@@ -1,7 +1,7 @@
+<div id="errors"></div>
 <%=  form_for(@answer, remote: true) do |f| %>
   <%=  f.text_area :content, :placeholder => "Comment", :class => "form-input", :id => "form-comment" %>
   <%=  f.text_field :url, :placeholder => "Link", :class => "form-input", :id => "form-url" %>
   <%=  f.hidden_field :question_id, :value => question.id %>
   <%=  f.submit "Post Answer", :class => "form-button" %>
 <% end %>
-<div id="errors"></div>

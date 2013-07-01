@@ -1,3 +1,4 @@
+<div id="errors"></div>
 <div class="comment-form">
   <%= form_for(@comment, remote: true) do |f| %>
     <%= f.text_field :content, :class => "form-input" %>
@@ -5,4 +6,3 @@
     <%= f.submit "Add Comment", :class => "form-button" %>
   <% end %>
 </div>
-<div class="errors"></div>

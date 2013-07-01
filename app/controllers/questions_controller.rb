@@ -18,6 +18,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to @question
     else
+      flash.now[:errors] = @question.errors.full_messages
       render :new
     end
   end

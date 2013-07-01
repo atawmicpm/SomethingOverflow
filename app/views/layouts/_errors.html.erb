@@ -1,3 +1,6 @@
-<% bad_object.errors.full_messages.each do |error| %>
-  <p><%= error %></p>
-<% end %>
+<div class="errors">
+  <div class="error-header">Please fix the following errors:</div>
+  <% bad_object.errors.full_messages.each do |error| %>
+    <li class="error"><%= error %></li>
+  <% end %>
+</div>
