@@ -4,6 +4,7 @@
   background-color: #eee;
   min-height: 220px;
   position: relative;
+  min-width: 918px;
 }
 
 .best_answer {

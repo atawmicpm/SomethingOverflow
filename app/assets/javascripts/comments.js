@@ -7,6 +7,7 @@ var Comment = {
 
   toggleComment: function(e) {
     e.preventDefault();
+      Vote.resetAnswersRelative();
  
     var link = $(this);
     link.siblings().last().slideToggle();

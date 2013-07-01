@@ -79,9 +79,9 @@ var Vote = {
       $Answer.css({position:'absolute',top:indexFrom}).animate({top:indexTo},500);
     });
 
-    setTimeout(function(){ 
-      Vote.resetAnswersRelative();
-    },520);
+    // setTimeout(function(){ 
+    //   Vote.resetAnswersRelative();
+    // },510);
   },
 
   resetAnswersRelative: function() {
