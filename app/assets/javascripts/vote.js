@@ -41,7 +41,7 @@ var Vote = {
   },
 
   updateVoteCount: function(button, vote_count) {
-    button.closest('.answer').find('#num-votes').text(vote_count);
+    button.parent().prev().find('#num-votes').text(vote_count);
   },
 
   modifyLiveVote: function(live_button) {
