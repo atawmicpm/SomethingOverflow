@@ -2,6 +2,6 @@
   <%= image_tag answer.picture_url, height: '200', width: '200', :class => "answer-image" %>
   <p><b>Product Name:</b> <%= answer.product_name %></p>
   <p class="answer-content"><b>Review:</b> <%= answer.content %></p>
-  <p class="answer-timestamp">answered 16 hours ago</p>
+  <p class="answer-timestamp">answered <%= time_ago_in_words(answer.created_at) %> ago</p>
   <%= link_to answer.user.name, user_path(answer.user), :class => "answer-user" %>
 </div>
