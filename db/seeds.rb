@@ -36,6 +36,7 @@ end
 30.times do
   Answer.create(url: "http://www.amazon.com/Plan-Toys-0553500-PlanToys-Construction/dp/B0015D2522/ref=sr_1_5?s=toys-and-games&ie=UTF8&qid=1372665952&sr=1-5&keywords=building+blocks", 
                 content: Faker::Lorem.paragraph)
+  sleep(5)
 end
 
 Answer.all.each do |answer|
@@ -61,6 +62,7 @@ question = Question.create(title: "What snowboard should I get?",
 user = User.find(1)
 user.questions << question
 
+answers = []
 answers << Answer.create(url: "http://www.amazon.com/Paricon-SB1-110T-Sceptor-Snowboard/dp/B000JJZLQU/ref=sr_1_1?s=sporting-goods&ie=UTF8&qid=1372478903&sr=1-1&keywords=snowboard", 
                          content: "I'm an intermediate snowboarder, and this board's been great so far.")
 answers << Answer.create(url: "http://www.amazon.com/Burton-1018856-Womens-Feather-Snowboard/dp/B005I70Z1O/ref=sr_1_4?s=sporting-goods&ie=UTF8&qid=1372478963&sr=1-4&keywords=snowboard", 
@@ -78,6 +80,7 @@ answers.each do |answer|
   question.answers << answer
 end
 
+comments = []
 comments << Comment.create(content: "I bought this board and I love it. Highly recommended!")
 comments << Comment.create(content: "Don't listen to this person. This board is awful!")
 comments << Comment.create(content: "It'll get you where you're trying to go, but not the best buy for the price...")
@@ -101,14 +104,14 @@ comments.each do |comment|
   answer.comments << comment
 end
 
-1000.times do |n|
-  user = User.find(rand(1..10))
-  value = n.even? ? -1 : 1
-  Vote.create(value: value, user_id: user.id, voteable_id: rand(1..110), voteable_type: 'Comment')
-end
-
 400.times do |n|
   user = User.find(rand(1..10))
   value = n.even? ? -1 : 1
   Vote.create(value: value, user_id: user.id, voteable_id: rand(1..35), voteable_type: 'Answer')
+end
+
+1000.times do |n|
+  user = User.find(rand(1..10))
+  value = n.even? ? -1 : 1
+  Vote.create(value: value, user_id: user.id, voteable_id: rand(1..110), voteable_type: 'Comment')
 end
