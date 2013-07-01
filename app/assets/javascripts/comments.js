@@ -23,9 +23,13 @@ var Comment = {
 
     if (commentBox.children().length === 0) {
       commentBox.html(data);
+      var comment = commentBox.children().first().hide();
+      comment.fadeIn(700);
     }
     else {
       commentBox.prepend(data);
+      var comment = commentBox.children().first().hide();
+      comment.fadeIn(700);
     }
 
     Comment.clearInput(commentBox.prev());

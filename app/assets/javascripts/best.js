@@ -17,7 +17,9 @@ var Best = {
 		
 		Best.hideBestAnswerLink($(this));
 		Best.replaceBestAnswer(firstAnswer, bestAnswer);
-		Vote.sortAnswers();
+		// setTimeout({
+		// 	Vote.sortAnswers();
+		// }, 1000);
 	},
 
 	hideBestAnswerLink: function(bestAnswerLink) {
@@ -30,6 +32,8 @@ var Best = {
 	replaceBestAnswer: function(answer1, answer2) {
 		var firstAnswer = answer1.clone();
 		var bestAnswer = answer2.clone();
+		// $.data(firstAnswer,'topPosition',$.data(answer2,'topPosition'));
+		// $.data(bestAnswer,'topPosition',$.data(answer1,'topPosition'));
 
 		answer1.replaceWith(bestAnswer);
 		Best.styleBestAnswer(bestAnswer);
