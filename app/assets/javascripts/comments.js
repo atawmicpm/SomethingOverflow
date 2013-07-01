@@ -1,8 +1,8 @@
 var Comment = {
   init: function() {
     $('#yield').on('click', '.comment-toggle', this.toggleComment);
-    $('.new_comment').on('ajax:success', this.appendComment);
-    $('.new_comment').on('ajax:error', this.appendErrors);
+    $('#answers-box').on('ajax:success', '.new_comment', this.appendComment);
+    $('#answers-box').on('ajax:error', '.new_comment', this.appendErrors);
   },
 
   toggleComment: function(e) {
