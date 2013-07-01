@@ -24,16 +24,17 @@ describe Answer do
   context "model methods" do
     it "should retrieve the title of the product from the website"
     it "should retrieve a picture of the product from the website"
-  end
-  
-  it "should return the answer's total vote count" do
-    answer.votes << vote
-    answer.votes << vote2
-    total_votes = 0
-    answer.votes.each do |vote|
-      total_votes += vote.value
+
+
+    it "should return the answer's total vote count" do
+      answer.votes << vote
+      answer.votes << vote2
+      total_votes = 0
+      answer.votes.each do |vote|
+        total_votes += vote.value
+      end
+      total_votes.should eq(2)    
     end
-    total_votes.should eq(2)    
   end
 end
 

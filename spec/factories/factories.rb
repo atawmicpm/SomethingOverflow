@@ -16,8 +16,15 @@ FactoryGirl.define do
 
   factory :answer do 
   	content "this is an answer"
-  	url "http://www.amazon.com/Aurora-Plush-inches-Dreamy-Prancer/dp/B002PUD6RC/ref=sr_1_3?ie=UTF8&qid=1372550596&sr=8-3&keywords=horse"
+  	url "http://www.amazon.com/Beanie-Boos-Julep-Monkey-Heart/dp/B005XH7L2K/ref=sr_1_3?s=toys-and-games&ie=UTF8&qid=1372640601&sr=1-3&keywords=heart"
+    question
   end
+
+  factory :answer_duplicate, parent: :answer do
+    content "this is an answer"
+    url "http://www.amazon.com/Beanie-Boos-Julep-Monkey-Heart/dp/B005XH7L2K/ref=sr_1_3?s=toys-and-games&ie=UTF8&qid=1372640601&sr=1-3&keywords=heart"
+    question
+  end  
 
   factory :invalid_answer, parent: :answer do
     url nil
