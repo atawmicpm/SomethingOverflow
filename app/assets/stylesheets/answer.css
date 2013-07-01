@@ -2,7 +2,7 @@
   margin: 20px 20px 0 20px;
   padding: 20px;
   background-color: #eee;
-  min-height: 200px;
+  min-height: 220px;
   position: relative;
   min-width: 918px;
 }
@@ -116,6 +116,10 @@
 }
 
 .best_answer:hover {
-  background-color: lightblue;
+  background-color: lightue;
   text-decoration: none;
+}
+
+#best-answer {
+  margin-bottom: 40px;
 }

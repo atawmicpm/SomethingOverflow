@@ -17,9 +17,7 @@ var Best = {
 		
 		Best.hideBestAnswerLink($(this));
 		Best.replaceBestAnswer(firstAnswer, bestAnswer);
-		// setTimeout({
-		// 	Vote.sortAnswers();
-		// }, 1000);
+	
 	},
 
 	hideBestAnswerLink: function(bestAnswerLink) {
