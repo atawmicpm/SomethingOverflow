@@ -1,0 +1,9 @@
+<% if flash[:errors] %>
+  <div class="errors">
+    <div class="error-header">Please fix the following errors:</div>
+    <% flash[:errors].each do |error| %>
+      <li class="error"><%= error %></li>
+    <% end %>
+  </div>
+<% end %>
+

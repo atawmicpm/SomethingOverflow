@@ -17,7 +17,7 @@ var Answer = {
   },
 
   clearInput: function() {
-    $('.answer-input').val('');
+    $('.form-input').val('');
   },
 
   clearMessages: function() {

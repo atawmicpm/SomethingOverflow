@@ -30,13 +30,6 @@
         <div id="page-title-box">
         <%= yield %>
       </div>
-      <ul class="messages">
-        <% if flash[:errors] %>
-          <% flash[:errors].each do |error| %>
-            <li class="errors"><%= error %></li>
-          <% end %>
-        <% end %>
-      </ul>
     </div>
   </body>
 </html>
