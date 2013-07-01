@@ -28,7 +28,7 @@ var Comment = {
       commentBox.prepend(data);
     }
 
-    Comment.clearInput();
+    Comment.clearInput(commentBox.prev());
     var $errorsBox = $(this).closest('.comments').children('#errors');
     Comment.clearMessages($errorsBox);
   },
@@ -39,8 +39,8 @@ var Comment = {
     $errorsBox.append(xhr.responseText);
   },
 
-  clearInput: function() {
-    $('#comment_content').val('');
+  clearInput: function(commentForm) {
+    commentForm.find('#comment_content').val('');
   },
 
   clearMessages: function(errorsBox) {
