@@ -9,6 +9,7 @@ class Answer < ActiveRecord::Base
   attr_accessible :url, :content, :question, :user
 
   validates :url, presence: true
+  validate :must_be_amazon_url
 
   default_scope order('created_at DESC')
 
@@ -26,5 +27,11 @@ class Answer < ActiveRecord::Base
     self.picture_url = agent.page.search("#main-image").first.attributes['src'].value
     mech_objs = agent.page.search("h1").children
     self.product_name = mech_objs.length > 1 ? mech_objs[-2].text() : mech_objs.text()
+  end
+
+  def must_be_amazon_url
+    unless url =~ /http:\/\/www.amazon.com\S*/
+      errors.add(:url, "must begin with 'http://amazon.com'")
+    end
   end
 end
