@@ -19,6 +19,12 @@ FactoryGirl.define do
   	url "http://www.amazon.com/Aurora-Plush-inches-Dreamy-Prancer/dp/B002PUD6RC/ref=sr_1_3?ie=UTF8&qid=1372550596&sr=8-3&keywords=horse"
   end
 
+  factory :invalid_answer, parent: :answer do
+    url nil
+    user
+    question
+  end
+
   factory :comment do 
     content "this is yet another awesome comment"
     user

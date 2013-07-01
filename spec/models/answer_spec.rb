@@ -1,21 +1,41 @@
 require 'spec_helper'
 
 describe Answer do
-  let(:answer) { Answer.create(url: "http://www.amazon.com/Gund-Philbin-18-Bear-Beige/dp/B0041Q3UME/ref=sr_1_6?ie=UTF8&qid=1372561939&sr=8-6&keywords=teddy") }
-  context "#current_vote_count" do
-    before do
-      2.times do
-        Vote.create(value: 1, votable_id: answer.id, votable_type: Answer::VOTEABLE_TYPE)
-      end
-    end
+  let(:answer) { FactoryGirl.create(:answer) }
+  let(:vote) { FactoryGirl.create(:vote) }
+  let(:vote2) { FactoryGirl.create(:vote) }
+  
+  context "all the associations" do
+    it { should belong_to(:question) }
+    it { should belong_to(:user) }
+    it { should have_many(:comments) }
+    it { should have_many(:votes) }
+  end
 
-    it "should return the total vote count" do
-      answer.current_vote_count.should eq(2)
+  context "validations" do
+    it "has a valid factory" do
+      FactoryGirl.create(:answer).should be_valid
     end
-
-    it "should not count votes for comments" do
-      Vote.create(value: 1, votable_id: answer.id, votable_type: Comment::VOTEABLE_TYPE)
-      answer.current_vote_count.should eq(2)
+    it "is invalid without a url" do
+      FactoryGirl.build(:answer, url: nil).should_not be_valid
     end
   end
+
+  context "model methods" do
+    it "should retrieve the title of the product from the website"
+    it "should retrieve a picture of the product from the website"
+  end
+  
+  it "should return the answer's total vote count" do
+    answer.votes << vote
+    answer.votes << vote2
+    total_votes = 0
+    answer.votes.each do |vote|
+      total_votes += vote.value
+    end
+    total_votes.should eq(2)    
+  end
 end
+
+
+
