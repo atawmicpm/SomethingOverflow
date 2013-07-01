@@ -1,8 +1,0 @@
-Finish by Monday:
-5. Finish styling
-6. Add jquery fanciness
-
-
-Small bugs/features:
-- Make timestamps actually work
-- Move CSS to SASS
