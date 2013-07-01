@@ -5,5 +5,4 @@ Finish by Monday:
 
 Small bugs/features:
 - Make timestamps actually work
-- Hide 'add/view comments' if there are zero comments and no current user
 - Move CSS to SASS
